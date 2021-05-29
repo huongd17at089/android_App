@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/android_App.iml" filepath="$PROJECT_DIR$/.idea/android_App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dinh_thi_thanh_huong_bai3_demo_btl.iml" filepath="$PROJECT_DIR$/.idea/modules/dinh_thi_thanh_huong_bai3_demo_btl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/dinh_thi_thanh_huong_bai3_demo_btl.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/dinh_thi_thanh_huong_bai3_demo_btl.app.iml" />
     </modules>
   </component>
 </project>
