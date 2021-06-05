@@ -8,8 +8,16 @@
     android:layout_marginLeft="20dp"
     android:layout_marginEnd="20dp"
     android:layout_marginRight="20dp"
-    android:orientation="vertical"
-    tools:context=".mainFragment.FragQuiz">
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Chủ đề mới "
+        android:textColor="@color/black"
+        android:textSize="25sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_sg"

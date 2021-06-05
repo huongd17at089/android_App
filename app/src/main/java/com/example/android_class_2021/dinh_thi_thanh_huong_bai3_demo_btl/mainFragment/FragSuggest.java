@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -78,7 +79,8 @@ public class FragSuggest extends Fragment{
             }
         });
         rv.setAdapter(oldtopicAdapter);
-        rv.setLayoutManager(new LinearLayoutManager(v.getContext()));
+        rv.setLayoutManager(new GridLayoutManager(v.getContext(), 2));
+//        rv.setLayoutManager(new LinearLayoutManager(v.getContext()));
 
         rv1 = v.findViewById(R.id.rv_sg);
         topicAdapter = new TopicAdapterRV(getContext());
@@ -129,7 +131,7 @@ public class FragSuggest extends Fragment{
         try {
             sender = (SendTopic) getParentFragment();
         } catch (ClassCastException e) {
-            throw new ClassCastException("Error in retrieving data. Please try again");
+            throw new ClassCastException();
         }
     }
 

@@ -54,27 +54,7 @@ public class Translate extends AppCompatActivity {
         DownloadConditions conditions = new DownloadConditions.Builder()
                 .requireWifi()
                 .build();
-        englishVietTranslator.downloadModelIfNeeded(conditions)
-                .addOnSuccessListener(
-                        new OnSuccessListener() {
-                            @Override
-                            public void onSuccess(Object o) {
 
-                            }
-
-                            public void onSuccess(Void v) {
-                                // Model downloaded successfully. Okay to start translating.
-                                // (Set a flag, unhide the translation UI, etc.)
-                            }
-                        })
-                .addOnFailureListener(
-                        new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                // Model couldn’t be downloaded or other internal error.
-                                // ...
-                            }
-                        });
         englishVietTranslator.translate(param)
                 .addOnSuccessListener(
                         new OnSuccessListener() {
@@ -95,5 +75,25 @@ public class Translate extends AppCompatActivity {
                                 // ...
                             }
                         });
+
+//        englishVietTranslator.downloadModelIfNeeded(conditions)
+//                .addOnSuccessListener(
+//                        new OnSuccessListener() {
+//                            @Override
+//                            public void onSuccess(Object o) {
+//
+//                            }
+//
+//                            public void onSuccess(Void v) {
+//
+//                            }
+//                        })
+//                .addOnFailureListener(
+//                        new OnFailureListener() {
+//                            @Override
+//                            public void onFailure(@NonNull Exception e) {
+//
+//                            }
+//                        });
     }
 }

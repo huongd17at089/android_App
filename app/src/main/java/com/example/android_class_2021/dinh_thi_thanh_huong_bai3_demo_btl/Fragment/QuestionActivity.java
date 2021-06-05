@@ -25,7 +25,7 @@ import java.util.Locale;
 public class QuestionActivity extends AppCompatActivity {
 
 
-    private TextView txtScore, txtTime, txtQuestion, txtOp1, txtOp2, txtOp3, txtOp4;
+    private TextView txtScore, txtTime, txtQuestion, txtOp1, txtOp2, txtOp3, txtOp4, txt_stt;
     private ArrayList<Question> questionList;
     private int questionCounter;
 //    private int questionCountTotal;
@@ -53,6 +53,7 @@ public class QuestionActivity extends AppCompatActivity {
         txtOp2 = findViewById(R.id.txt_b);
         txtOp3 = findViewById(R.id.txt_c);
         txtOp4 = findViewById(R.id.txt_d);
+        txt_stt = findViewById(R.id.txt_cau);
         textTrue = txtOp2.getTextColors();
         textFalse = txtOp3.getTextColors();
         textDefault = txtOp1.getTextColors();
@@ -92,6 +93,7 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     private void showQuestion() {
+        txt_stt.setText("Câu số " + (questionCounter+1) );
         txtOp1.setTextColor(textDefault);
         txtOp2.setTextColor(textDefault);
         txtOp3.setTextColor(textDefault);

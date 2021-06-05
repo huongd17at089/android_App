@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -36,8 +37,19 @@ public class FragLession extends Fragment {
 
     public void setTopic(Topic topic) {
         this.topic = topic;
-        if(topic == null)
+        if(topic == null){
             adapter.setLs(db.getAllQuizs(Quiz.EASY));
+            btn1.setTextColor(txtSelected);
+            btn2.setTextColor(txtUnselected);
+            btn3.setTextColor(txtUnselected);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                btn1.setBackgroundTintList(bbgSelected);
+                btn2.setBackgroundTintList(bgUnselected);
+                btn3.setBackgroundTintList(bgUnselected);
+            }
+
+        }
+
     }
 
     public FragLession() {
@@ -90,7 +102,8 @@ public class FragLession extends Fragment {
 //        adapter.notifyDataSetChanged();
         rv.setAdapter(adapter);
 //        rv.setLayoutManager(new LinearLayoutManager(v.getContext()));
-        rv.setLayoutManager(new GridLayoutManager(v.getContext(), 2));
+//        rv.setLayoutManager(new GridLayoutManager(v.getContext(), 2));
+        rv.setLayoutManager(new LinearLayoutManager(v.getContext()));
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

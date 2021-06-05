@@ -9,230 +9,239 @@
     android:paddingLeft="15dp"
     android:paddingRight="15dp">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Xin chào!!"
-        android:textColor="@color/purple"
-        android:textSize="35dp"
-        android:textStyle="bold" />
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical">
+           <TextView
+               android:id="@+id/textView2"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="10dp"
+               android:text="Xin chào!!"
+               android:textColor="@color/purple"
+               android:textSize="35dp"
+               android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:text="cùng cố gắng học nha!!"
-        android:textColor="@color/purple" />
+           <TextView
+               android:id="@+id/textView3"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="10dp"
+               android:text="cùng cố gắng học nha!!"
+               android:textColor="@color/purple" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center|center_horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/oval_card"
-        android:orientation="horizontal"
-        android:padding="3dp">
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center|center_horizontal"
+               android:layout_marginTop="10dp"
+               android:layout_marginBottom="10dp"
+               android:background="@drawable/oval_card"
+               android:orientation="horizontal"
+               android:padding="5dp">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ava" />
+               <ImageView
+                   android:id="@+id/imageView2"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="10dp"
+                   android:layout_weight="1"
+                   app:srcCompat="@drawable/ava" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:layout_gravity="center_vertical"
+                   android:layout_weight="1"
+                   android:gravity="center_vertical"
+                   android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Đề xuất"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                   <TextView
+                       android:id="@+id/textView4"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Đề xuất"
+                       android:textColor="@color/black"
+                       android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lộ trình học  cá nhân hóa" />
+                   <TextView
+                       android:id="@+id/textView5"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Lộ trình học  cá nhân hóa" />
 
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/oval_btn"
-                android:text="Bắt đầu"
-                app:backgroundTint="@color/pink" />
-        </LinearLayout>
+                   <Button
+                       android:id="@+id/button4"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="10dp"
+                       android:background="@drawable/oval_btn"
+                       android:text="Bắt đầu"
+                       app:backgroundTint="@color/pink" />
+               </LinearLayout>
 
-    </LinearLayout>
+           </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Chuỗi luyện tập"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+           <TextView
+               android:id="@+id/textView14"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Chuỗi luyện tập"
+               android:textColor="@color/black"
+               android:textSize="20dp"
+               android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hoàn thành bài học mỗi ngày nhé!!"
-        android:textColor="@color/black" />
+           <TextView
+               android:id="@+id/textView7"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Hoàn thành bài học mỗi ngày nhé!!"
+               android:textColor="@color/black" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/huonghh" />
+           <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/rv_star"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Lựa chọn luyện tập"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+           <TextView
+               android:id="@+id/textView8"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Lựa chọn luyện tập"
+               android:textColor="@color/black"
+               android:textSize="20dp"
+               android:textStyle="bold" />
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+           <TableLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
+               <TableRow
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:gravity="center">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/oval_card2"
-                android:orientation="vertical"
-                android:padding="8dp">
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:layout_marginEnd="5dp"
+                       android:layout_marginRight="5dp"
+                       android:layout_marginBottom="5dp"
+                       android:background="@drawable/oval_card2"
+                       android:orientation="vertical"
+                       android:padding="8dp">
 
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="TextView"
-                    android:textColor="@color/purple"
-                    android:textStyle="bold" />
+                       <TextView
+                           android:id="@+id/textView9"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:gravity="center"
+                           android:text="Lựa chọn 1"
+                           android:textColor="@color/purple"
+                           android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_baseline_smart_toy_150"
-                    tools:ignore="VectorDrawableCompat" />
-            </LinearLayout>
+                       <ImageView
+                           android:id="@+id/imageView6"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           app:srcCompat="@drawable/ic_baseline_smart_toy_150"
+                           tools:ignore="VectorDrawableCompat" />
+                   </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/oval_card2"
-                android:orientation="vertical"
-                android:padding="8dp">
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:layout_marginStart="5dp"
+                       android:layout_marginLeft="5dp"
+                       android:layout_marginBottom="5dp"
+                       android:background="@drawable/oval_card2"
+                       android:orientation="vertical"
+                       android:padding="8dp">
 
 
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="TextView"
-                    android:textColor="@color/purple"
-                    android:textStyle="bold" />
+                       <TextView
+                           android:id="@+id/textView10"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:gravity="center"
+                           android:text="Lựa chọn 2"
+                           android:textColor="@color/purple"
+                           android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_baseline_smart_toy_150"
-                    tools:ignore="VectorDrawableCompat" />
-            </LinearLayout>
-        </TableRow>
+                       <ImageView
+                           android:id="@+id/imageView7"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           app:srcCompat="@drawable/ic_baseline_smart_toy_150"
+                           tools:ignore="VectorDrawableCompat" />
+                   </LinearLayout>
+               </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
+               <TableRow
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:gravity="center">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/oval_card2"
-                android:orientation="vertical"
-                android:padding="8dp">
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:layout_marginEnd="5dp"
+                       android:layout_marginRight="5dp"
+                       android:background="@drawable/oval_card2"
+                       android:orientation="vertical"
+                       android:padding="8dp">
 
-                <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="TextView"
-                    android:textColor="@color/purple"
-                    android:textStyle="bold" />
+                       <TextView
+                           android:id="@+id/textView11"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:gravity="center"
+                           android:text="Lựa chọn 3"
+                           android:textColor="@color/purple"
+                           android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_baseline_smart_toy_150"
-                    tools:ignore="VectorDrawableCompat" />
-            </LinearLayout>
+                       <ImageView
+                           android:id="@+id/imageView8"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           app:srcCompat="@drawable/ic_baseline_smart_toy_150"
+                           tools:ignore="VectorDrawableCompat" />
+                   </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="5dp"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/oval_card2"
-                android:orientation="vertical"
-                android:padding="8dp">
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:layout_marginStart="5dp"
+                       android:layout_marginLeft="5dp"
+                       android:background="@drawable/oval_card2"
+                       android:orientation="vertical"
+                       android:padding="8dp">
 
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="TextView"
-                    android:textColor="@color/purple"
-                    android:textStyle="bold" />
+                       <TextView
+                           android:id="@+id/textView12"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:gravity="center"
+                           android:text="Lựa chọn 4"
+                           android:textColor="@color/purple"
+                           android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/imageView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_baseline_smart_toy_150"
-                    tools:ignore="VectorDrawableCompat" />
+                       <ImageView
+                           android:id="@+id/imageView9"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           app:srcCompat="@drawable/ic_baseline_smart_toy_150"
+                           tools:ignore="VectorDrawableCompat" />
 
-            </LinearLayout>
-        </TableRow>
+                   </LinearLayout>
+               </TableRow>
 
-    </TableLayout>
+           </TableLayout>
+       </LinearLayout>
+   </ScrollView>
 
 </LinearLayout>

@@ -171,34 +171,51 @@ public class Dict extends Fragment {
 
 
     private void translateSingleWord(String word){
-        RequestQueue rq = Volley.newRequestQueue(v.getContext());
-        JsonArrayRequest or = new JsonArrayRequest(
-                Request.Method.GET,
-                URL + word,
-                null,
-                new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        try {
-                            Word w = new Word(response.getJSONObject(0));
-                            new DictHelper(getContext()).addWord(new DictItem(word, response.getJSONObject(0).toString()));
-                            ls.add(w);
-                            adapter.setLs(ls);
-                            Intent intent = new Intent(v.getContext(), WordDetail.class);
-                            intent.putExtra("word", w);
-                            startActivity(intent);
-                        } catch (JSONException e) {
-                            //error activity
+        DictItem item = new QuizHelper(getContext()).getWordByWord(word);
+        if( item != null){
+            JSONObject j = null;
+            try {
+                j = new JSONObject(item.getContent());
+                ls.add(new Word(j));
+                Word w = new Word(j);
+                Intent intent = new Intent(v.getContext(), WordDetail.class);
+                intent.putExtra("word", w);
+                startActivity(intent);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+        else{
+            RequestQueue rq = Volley.newRequestQueue(v.getContext());
+            JsonArrayRequest or = new JsonArrayRequest(
+                    Request.Method.GET,
+                    URL + word,
+                    null,
+                    new Response.Listener<JSONArray>() {
+                        @Override
+                        public void onResponse(JSONArray response) {
+                            try {
+                                Word w = new Word(response.getJSONObject(0));
+                                new DictHelper(getContext()).addWord(new DictItem(word, response.getJSONObject(0).toString()));
+                                ls.add(w);
+                                adapter.setLs(ls);
+                                Intent intent = new Intent(v.getContext(), WordDetail.class);
+                                intent.putExtra("word", w);
+                                startActivity(intent);
+                            } catch (JSONException e) {
+                                //error activity
+                            }
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
                         }
                     }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                    }
-                }
-        );
+            );
 
-        rq.add(or);
+            rq.add(or);
+        }
     }
 }

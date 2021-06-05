@@ -24,16 +24,9 @@ import java.util.ArrayList;
 public class QuizHelper extends SQLiteOpenHelper  {
     private static final String DATABASE_NAME = "oder.db";
     private static final int DATABASE_VERSION = 1;
-    private static QuizHelper instance;
+//    private static QuizHelper instance;
     private SQLiteDatabase db;
 
-
-    public static synchronized QuizHelper getInstance(Context context) {
-        if (instance == null) {
-            instance = new QuizHelper(context.getApplicationContext());
-        }
-        return instance;
-    }
 
     final String SQL_CREATE_TOPIC_TABLE = "CREATE TABLE " +
             Contract.TopicTable.TABLE_NAME + "( " +
@@ -312,18 +305,18 @@ public class QuizHelper extends SQLiteOpenHelper  {
         insertTopic(topic);
         ArrayList<Quiz> ls = new ArrayList<>();
         for( int i = 0 ; i < 3; i++){
-            Quiz q = new Quiz(topic,Quiz.EASY.toUpperCase() + " Quiz " + (i+1), Quiz.EASY);
+            Quiz q = new Quiz(topic, " Quiz " + (i+1), Quiz.EASY);
             q.setId((int) insertQuiz(q));
             ls.add(q);
 
         }
         for( int i = 0 ; i < 3; i++){
-            Quiz q = new Quiz(topic,Quiz.MEDIUM.toUpperCase() + " Quiz " + (i+1), Quiz.MEDIUM);
+            Quiz q = new Quiz(topic, " Quiz " + (i+1), Quiz.MEDIUM);
             q.setId((int) insertQuiz(q));
             ls.add(q);
         }
         for( int i = 0 ; i < 3; i++){
-            Quiz q = new Quiz(topic,Quiz.HARD.toUpperCase() + " Quiz " + (i+1), Quiz.HARD);
+            Quiz q = new Quiz(topic," Quiz " + (i+1), Quiz.HARD);
             q.setId((int) insertQuiz(q));
             ls.add(q);
         }
@@ -415,6 +408,36 @@ public class QuizHelper extends SQLiteOpenHelper  {
         }
         c.close();
         return ls;
+    }
+
+//    public static synchronized QuizHelper getInstance(Context context) {
+//        if (instance == null) {
+//            instance = new QuizHelper(context.getApplicationContext());
+//        }
+//        return instance;
+//    }
+
+    public DictItem getWordByWord(String key){
+        DictItem item = null;
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM " + Contract.DictItemsTable.TABLE_NAME + " WHERE " + Contract.DictItemsTable.COLUMN_WORD+ " = '" + key + "'" , null);
+        if (c.moveToFirst()) {
+
+            item = new DictItem();
+            item.setId(c.getInt(c.getColumnIndex(Contract.DictItemsTable._ID)));
+            item.setWord(c.getString(c.getColumnIndex(Contract.DictItemsTable.COLUMN_WORD)));
+            item.setContent(c.getString(c.getColumnIndex(Contract.DictItemsTable.COLUMN_CONTENT)));
+
+        }
+        c.close();
+        return item;
+    }
+
+    public int deleteTopic(Topic topic){
+        SQLiteDatabase st = getWritableDatabase();
+        String whereClause = Contract.TopicTable._ID + "=?";
+        String[] whereArgs = {String.valueOf(topic.getId())};
+        return st.delete(Contract.TopicTable.TABLE_NAME, whereClause, whereArgs);
     }
 
 

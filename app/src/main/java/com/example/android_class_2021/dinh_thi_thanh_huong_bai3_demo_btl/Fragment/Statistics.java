@@ -24,35 +24,29 @@ public class Statistics extends AppCompatActivity {
     public void createBarChart() {
         BarChart chart = findViewById(R.id.barchart);
 
-        ArrayList NoOfEmp = new ArrayList();
+        ArrayList num = new ArrayList();
 
-        NoOfEmp.add(new BarEntry(945f, 0));
-        NoOfEmp.add(new BarEntry(1040f, 1));
-        NoOfEmp.add(new BarEntry(1133f, 2));
-        NoOfEmp.add(new BarEntry(1240f, 3));
-        NoOfEmp.add(new BarEntry(1369f, 4));
-        NoOfEmp.add(new BarEntry(1487f, 5));
-        NoOfEmp.add(new BarEntry(1501f, 6));
-        NoOfEmp.add(new BarEntry(1645f, 7));
-        NoOfEmp.add(new BarEntry(1578f, 8));
-        NoOfEmp.add(new BarEntry(1695f, 9));
+        num.add(new BarEntry(10, 0));
+        num.add(new BarEntry(20, 1));
+        num.add(new BarEntry(30, 2));
+        num.add(new BarEntry(60, 3));
+        num.add(new BarEntry(80, 4));
+        num.add(new BarEntry(90, 5));
+        num.add(new BarEntry(120, 6));
 
-        ArrayList year = new ArrayList();
+        ArrayList day = new ArrayList();
 
-        year.add("2008");
-        year.add("2009");
-        year.add("2010");
-        year.add("2011");
-        year.add("2012");
-        year.add("2013");
-        year.add("2014");
-        year.add("2015");
-        year.add("2016");
-        year.add("2017");
+        day.add("T2");
+        day.add("T3");
+        day.add("T4");
+        day.add("T5");
+        day.add("T6");
+        day.add("T7");
+        day.add("T7");
 
-        BarDataSet bardataset = new BarDataSet(NoOfEmp, "No Of Employee");
+        BarDataSet bardataset = new BarDataSet(num, " ");
         chart.animateY(5000);
-        BarData data = new BarData(year, bardataset);
+        BarData data = new BarData(day, bardataset);
         bardataset.setColors(ColorTemplate.COLORFUL_COLORS);
         chart.setData(data);
     }

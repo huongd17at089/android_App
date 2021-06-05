@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -76,7 +77,17 @@ public class OldTopicAdapter extends RecyclerView.Adapter<OldTopicAdapter.TopicV
         if (topic == null)
             return;
         holder.txt_title.setText(topic.getName());
-        holder.txt_check.setText("chưa hoàn thành");
+        holder.btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // del trong db
+                if(new QuizHelper(context).deleteTopic(topic) != 0){
+                    ls.remove(position);
+                    notifyDataSetChanged();
+                }
+
+            }
+        });
         holder.img.setImageResource(topic.getImg());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,14 +115,15 @@ public class OldTopicAdapter extends RecyclerView.Adapter<OldTopicAdapter.TopicV
     }
 
     public class TopicViewHolder extends RecyclerView.ViewHolder {
-        TextView txt_title, txt_check;
+        TextView txt_title;
         ImageView img;
+        Button btn;
 
 
         public TopicViewHolder(@NonNull View v) {
             super(v);
             txt_title = v.findViewById(R.id.title);
-            txt_check = v.findViewById(R.id.check);
+            btn = v.findViewById(R.id.btn_del);
             img =  v.findViewById(R.id.img);
 
         }

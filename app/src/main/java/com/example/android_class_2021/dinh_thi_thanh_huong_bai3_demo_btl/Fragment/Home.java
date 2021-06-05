@@ -1,14 +1,21 @@
 package com.example.android_class_2021.dinh_thi_thanh_huong_bai3_demo_btl.Fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.android_class_2021.dinh_thi_thanh_huong_bai3_demo_btl.R;
+import com.example.android_class_2021.dinh_thi_thanh_huong_bai3_demo_btl.mainAdapter.DailyStarAdapter;
+import com.example.android_class_2021.dinh_thi_thanh_huong_bai3_demo_btl.model.DailyStar;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +32,10 @@ public class Home extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private RecyclerView rv;
+    private DailyStarAdapter adapter;
+
 
     public Home() {
         // Required empty public constructor
@@ -60,7 +71,26 @@ public class Home extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_hone, container, false);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_hone, container, false);
+        rv = v.findViewById(R.id.rv_star);
+        adapter = new DailyStarAdapter(fakeData());
+        rv.setAdapter(adapter);
+        LinearLayoutManager lm = new LinearLayoutManager(v.getContext());
+        lm.setOrientation(LinearLayoutManager.HORIZONTAL);
+        rv.setLayoutManager(lm);
+        return  v;
+    }
+
+    private ArrayList<DailyStar> fakeData() {
+        ArrayList<DailyStar> ls = new ArrayList<>();
+        ls.add(new DailyStar(true, "T2"));
+        ls.add(new DailyStar(true, "T3"));
+        ls.add(new DailyStar(true, "T4"));
+        ls.add(new DailyStar(true, "T5"));
+        ls.add(new DailyStar(false, "T6"));
+        ls.add(new DailyStar(false, "T7"));
+        ls.add(new DailyStar(false, "cn"));
+        return ls;
     }
 }

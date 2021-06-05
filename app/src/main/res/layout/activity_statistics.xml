@@ -45,7 +45,10 @@
             android:id="@+id/textView30"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="TOEIC"
+            android:textColor="@color/purple"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <View
             android:id="@+id/divider5"
@@ -67,7 +70,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="TextView" />
+                    android:text="Bắt đầu" />
 
                 <TextView
                     android:id="@+id/textView32"
@@ -76,7 +79,7 @@
                     android:layout_gravity="right"
                     android:foregroundGravity="right"
                     android:gravity="right"
-                    android:text="TextView" />
+                    android:text="Mục tiêu" />
             </TableRow>
 
         </TableLayout>
@@ -84,7 +87,8 @@
         <SeekBar
             android:id="@+id/seekBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:progress="20" />
 
         <TableLayout
             android:layout_width="match_parent"
@@ -100,7 +104,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:text="TextView" />
+                    android:text="200"
+                    android:textColor="@color/purple"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView34"
@@ -109,7 +115,9 @@
                     android:layout_gravity="right"
                     android:foregroundGravity="right"
                     android:gravity="right"
-                    android:text="TextView" />
+                    android:text="800"
+                    android:textColor="@color/purple"
+                    android:textStyle="bold" />
             </TableRow>
 
         </TableLayout>
@@ -127,13 +135,16 @@
             android:id="@+id/textView35"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="Hoạt động"
+            android:textColor="@color/purple"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView36"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="Theo dõi tiến độ luyện tập" />
 
         <!--        <LinearLayout-->
         <!--            android:id="@+id/chart"-->
@@ -173,8 +184,8 @@
                     android:layout_gravity="left"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:text="TextView"
-                    android:textColor="@color/purple"
+                    android:text="Kho từ vựng"
+                    android:textColor="#5239AC"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -185,9 +196,10 @@
                     android:layout_gravity="left"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:text="TextView"
-                    android:textColor="#5239AC"
-                    android:textSize="30sp" />
+                    android:text="82"
+                    android:textColor="@color/pink"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView18"
@@ -196,8 +208,7 @@
                     android:layout_gravity="left"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:text="TextView"
-                    android:textColor="@color/purple"
+                    android:text="Từ thành thạo"
                     android:textSize="10dp"
                     android:textStyle="italic" />
             </LinearLayout>
@@ -218,8 +229,8 @@
                     android:layout_gravity="left"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:text="TextView"
-                    android:textColor="@color/purple"
+                    android:text="Hoàn thành"
+                    android:textColor="#5239AC"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -230,9 +241,10 @@
                     android:layout_gravity="left"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:text="TextView"
-                    android:textColor="#5239AC"
-                    android:textSize="30sp" />
+                    android:text="13"
+                    android:textColor="@color/pink"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textView20"
@@ -241,8 +253,7 @@
                     android:layout_gravity="left"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:text="TextView"
-                    android:textColor="@color/purple"
+                    android:text="Chủ điểm"
                     android:textSize="10dp"
                     android:textStyle="italic" />
             </LinearLayout>
