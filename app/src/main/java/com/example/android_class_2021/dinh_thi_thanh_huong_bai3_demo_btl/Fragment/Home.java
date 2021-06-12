@@ -90,7 +90,7 @@ public class Home extends Fragment {
         ls.add(new DailyStar(true, "T5"));
         ls.add(new DailyStar(false, "T6"));
         ls.add(new DailyStar(false, "T7"));
-        ls.add(new DailyStar(false, "cn"));
+        ls.add(new DailyStar(false, "CN"));
         return ls;
     }
 }

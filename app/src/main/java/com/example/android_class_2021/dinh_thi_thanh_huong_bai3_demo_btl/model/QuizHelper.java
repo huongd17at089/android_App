@@ -299,64 +299,64 @@ public class QuizHelper extends SQLiteOpenHelper  {
 
     }
 
-    public void updateTopicData(Topic topic, Context context){
-
-        SQLiteDatabase db = getWritableDatabase();
-        insertTopic(topic);
-        ArrayList<Quiz> ls = new ArrayList<>();
-        for( int i = 0 ; i < 3; i++){
-            Quiz q = new Quiz(topic, " Quiz " + (i+1), Quiz.EASY);
-            q.setId((int) insertQuiz(q));
-            ls.add(q);
-
-        }
-        for( int i = 0 ; i < 3; i++){
-            Quiz q = new Quiz(topic, " Quiz " + (i+1), Quiz.MEDIUM);
-            q.setId((int) insertQuiz(q));
-            ls.add(q);
-        }
-        for( int i = 0 ; i < 3; i++){
-            Quiz q = new Quiz(topic," Quiz " + (i+1), Quiz.HARD);
-            q.setId((int) insertQuiz(q));
-            ls.add(q);
-        }
-
-        for(Quiz q: ls)
-            updateQuestionData(q,context);
-
-    }
-
-
-
-    private void updateQuestionData(Quiz q, Context context) {
-        RequestQueue rq = Volley.newRequestQueue(context);
-        JsonObjectRequest jar = new JsonObjectRequest(
-                Request.Method.GET,
-                "https://opentdb.com/api.php?amount="+Quiz.MAX_NUM_QUESTION+"&category="+q.getTopic().getId()+"&difficulty="+ q.getDifficulty() +"&type=multiple",
-                null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        JSONArray arr = response.optJSONArray("results");
-                        int l = arr.length();
-                        for( int i = 0; i < l; i++){
-                            Question qu = new Question(q, arr.optJSONObject(i));
-                            int id = (int) insertQuestion(qu);
-                            qu.setId(id);
-                        }
-
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-
-                    }
-                }
-        );
-
-        rq.add(jar);
-    }
+//    public void updateTopicData(Topic topic, Context context){
+//
+//        SQLiteDatabase db = getWritableDatabase();
+//        insertTopic(topic);
+//        ArrayList<Quiz> ls = new ArrayList<>();
+//        for( int i = 0 ; i < 3; i++){
+//            Quiz q = new Quiz(topic, " Quiz " + (i+1), Quiz.EASY);
+//            q.setId((int) insertQuiz(q));
+//            ls.add(q);
+//
+//        }
+//        for( int i = 0 ; i < 3; i++){
+//            Quiz q = new Quiz(topic, " Quiz " + (i+1), Quiz.MEDIUM);
+//            q.setId((int) insertQuiz(q));
+//            ls.add(q);
+//        }
+//        for( int i = 0 ; i < 3; i++){
+//            Quiz q = new Quiz(topic," Quiz " + (i+1), Quiz.HARD);
+//            q.setId((int) insertQuiz(q));
+//            ls.add(q);
+//        }
+//
+//        for(Quiz q: ls)
+//            updateQuestionData(q,context);
+//
+//    }
+//
+//
+//
+//    private void updateQuestionData(Quiz q, Context context) {
+//        RequestQueue rq = Volley.newRequestQueue(context);
+//        JsonObjectRequest jar = new JsonObjectRequest(
+//                Request.Method.GET,
+//                "https://opentdb.com/api.php?amount="+Quiz.MAX_NUM_QUESTION+"&category="+q.getTopic().getId()+"&difficulty="+ q.getDifficulty() +"&type=multiple",
+//                null,
+//                new Response.Listener<JSONObject>() {
+//                    @Override
+//                    public void onResponse(JSONObject response) {
+//                        JSONArray arr = response.optJSONArray("results");
+//                        int l = arr.length();
+//                        for( int i = 0; i < l; i++){
+//                            Question qu = new Question(q, arr.optJSONObject(i));
+//                            int id = (int) insertQuestion(qu);
+//                            qu.setId(id);
+//                        }
+//
+//                    }
+//                },
+//                new Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//
+//                    }
+//                }
+//        );
+//
+//        rq.add(jar);
+//    }
 
     private void fillDictTable() {
     }

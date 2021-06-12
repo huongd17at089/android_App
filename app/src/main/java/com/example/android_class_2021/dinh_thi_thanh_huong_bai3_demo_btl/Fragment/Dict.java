@@ -134,7 +134,7 @@ public class Dict extends Fragment {
             @Override
             public boolean onQueryTextChange(String newText) {
                 String[] split = newText.split("\\s+");
-                adapter.setLs(createWordList(new QuizHelper(getContext()).getAllWordByKey(split[0])));
+                adapter.setLs(createWordList(new QuizHelper(getContext()).getAllWordByKey(newText)));
                 return true;
             }
         });
@@ -211,6 +211,7 @@ public class Dict extends Fragment {
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
+                            translateParagraph(word);
                         }
                     }
             );

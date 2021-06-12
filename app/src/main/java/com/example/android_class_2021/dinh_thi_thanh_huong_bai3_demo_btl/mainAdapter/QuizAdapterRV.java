@@ -78,6 +78,7 @@ public class QuizAdapterRV  extends RecyclerView.Adapter<QuizAdapterRV.QuizViewH
         holder.txtTitle.setText(q.getName());
         holder.txtDiff.setText(q.getDifficulty());
         holder.img.setImageResource(q.getImg());
+        holder.txtTopic.setText(q.getTopic().getName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,7 +103,7 @@ public class QuizAdapterRV  extends RecyclerView.Adapter<QuizAdapterRV.QuizViewH
     }
 
     public class QuizViewHolder extends RecyclerView.ViewHolder {
-        TextView txtTitle, txtDiff;
+        TextView txtTitle, txtDiff, txtTopic;
         ImageView img;
 
         public QuizViewHolder(@NonNull View v) {
@@ -110,6 +111,7 @@ public class QuizAdapterRV  extends RecyclerView.Adapter<QuizAdapterRV.QuizViewH
             txtTitle = v.findViewById(R.id.lession_card_title);
             txtDiff = v.findViewById(R.id.lession_card_diff);
             img = v.findViewById(R.id.lession_card_img);
+            txtTopic = v.findViewById(R.id.lession_topic);
         }
     }
 

@@ -45,13 +45,13 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position){
             case 0 :
-                return "Gợi ý";
-            case 1 :
                 return "Chủ đề";
+            case 1 :
+                return "Quiz";
 //            case 2:
 //                return "Statistic";
             default:
-                return "Gợi ý";
+                return "Chủ đề";
         }
     }
 }

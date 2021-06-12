@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android_class_2021.dinh_thi_thanh_huong_bai3_demo_btl.R;
 import com.example.android_class_2021.dinh_thi_thanh_huong_bai3_demo_btl.model.Word;
@@ -34,6 +35,7 @@ public class Translate extends AppCompatActivity {
         Intent intent = getIntent();
         String param = intent.getStringExtra("word");
         txtVi.setText(param);
+
         translate(param);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,15 +47,13 @@ public class Translate extends AppCompatActivity {
     }
 
     private void translate(String param){
+        txtEn.setText(param);
         TranslatorOptions options =
                 new TranslatorOptions.Builder()
                         .setSourceLanguage(TranslateLanguage.ENGLISH)
                         .setTargetLanguage(TranslateLanguage.VIETNAMESE)
                         .build();
-        final Translator englishVietTranslator = Translation.getClient(options);
-        DownloadConditions conditions = new DownloadConditions.Builder()
-                .requireWifi()
-                .build();
+        Translator englishVietTranslator = Translation.getClient(options);
 
         englishVietTranslator.translate(param)
                 .addOnSuccessListener(
@@ -71,29 +71,30 @@ public class Translate extends AppCompatActivity {
                         new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                // Error.
-                                // ...
+                                Toast.makeText(Translate.this, "lỗi mạng", Toast.LENGTH_LONG).show();
                             }
                         });
+        DownloadConditions conditions = new DownloadConditions.Builder()
+                .requireWifi()
+                .build();
+        englishVietTranslator.downloadModelIfNeeded(conditions)
+                .addOnSuccessListener(
+                        new OnSuccessListener() {
+                            @Override
+                            public void onSuccess(Object o) {
 
-//        englishVietTranslator.downloadModelIfNeeded(conditions)
-//                .addOnSuccessListener(
-//                        new OnSuccessListener() {
-//                            @Override
-//                            public void onSuccess(Object o) {
-//
-//                            }
-//
-//                            public void onSuccess(Void v) {
-//
-//                            }
-//                        })
-//                .addOnFailureListener(
-//                        new OnFailureListener() {
-//                            @Override
-//                            public void onFailure(@NonNull Exception e) {
-//
-//                            }
-//                        });
+                            }
+
+                            public void onSuccess(Void v) {
+
+                            }
+                        })
+                .addOnFailureListener(
+                        new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+
+                            }
+                        });
     }
 }

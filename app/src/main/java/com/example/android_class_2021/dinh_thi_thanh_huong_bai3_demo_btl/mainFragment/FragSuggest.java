@@ -104,8 +104,8 @@ public class FragSuggest extends Fragment{
                     ArrayList<Topic> b = db.getAllTopic();
                     a.removeAll(b);
                     topicAdapter.setLs(a);
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                } catch (Exception e) {
+                    topicAdapter.setLs(new ArrayList<Topic>());
                 }
 
             }
@@ -134,40 +134,6 @@ public class FragSuggest extends Fragment{
             throw new ClassCastException();
         }
     }
-
-//    private void getNewTopic() {
-//        RequestQueue rq = Volley.newRequestQueue(getContext());
-//        JsonObjectRequest or = new JsonObjectRequest(
-//                Request.Method.GET,
-//                "https://opentdb.com/api_category.php",
-//                null,
-//                new Response.Listener<JSONObject>() {
-//                    @Override
-//                    public void onResponse(JSONObject response) {
-//
-//                        ArrayList<Topic> a = new ArrayList<>();
-//                        JSONArray arr = response.optJSONArray("trivia_categories");
-//                        int l = arr.length();
-//                        for (int i = 0; i < l; i++) {
-//                            a.add(new Topic(arr.optJSONObject(i)));
-//                        }
-//                        ArrayList<Topic> b = db.getAllTopic();
-//                        a.removeAll(b);
-//                        topicAdapter.setLs(a);
-//
-//                    }
-//                },
-//                new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-////                        txt.setText(error.toString());
-//                    }
-//                }
-//        );
-//
-//        rq.add(or);
-//
-//    }
 
 
 

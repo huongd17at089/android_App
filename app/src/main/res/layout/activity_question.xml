@@ -99,8 +99,10 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/oval_text"
                 android:gravity="center"
+                android:maxEms="5"
                 android:padding="10dp"
-                android:text="Đáp án A"
+                android:singleLine="false"
+                android:text="Đáp án"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
@@ -111,7 +113,9 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/oval_text"
                 android:gravity="center"
+                android:maxEms="5"
                 android:padding="10dp"
+                android:singleLine="false"
                 android:text="Đáp án"
                 android:textColor="#50B1A8"
                 android:textStyle="bold" />
@@ -128,7 +132,9 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/oval_text"
                 android:gravity="center"
+                android:maxEms="5"
                 android:padding="10dp"
+                android:singleLine="false"
                 android:text="Đáp án"
                 android:textColor="#A33E3E"
                 android:textStyle="bold" />
@@ -140,7 +146,9 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/oval_text"
                 android:gravity="center"
+                android:maxEms="5"
                 android:padding="10dp"
+                android:singleLine="false"
                 android:text="Đáp án"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold" />

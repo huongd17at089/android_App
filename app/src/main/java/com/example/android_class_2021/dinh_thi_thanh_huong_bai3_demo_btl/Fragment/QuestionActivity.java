@@ -93,7 +93,7 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     private void showQuestion() {
-        txt_stt.setText("Câu số " + (questionCounter+1) );
+        txt_stt.setText("Question " + (questionCounter+1) );
         txtOp1.setTextColor(textDefault);
         txtOp2.setTextColor(textDefault);
         txtOp3.setTextColor(textDefault);
@@ -101,10 +101,10 @@ public class QuestionActivity extends AppCompatActivity {
         if (questionCounter < Quiz.MAX_NUM_QUESTION) {
             currentQuestion = questionList.get(questionCounter);
             txtQuestion.setText(Html.fromHtml(currentQuestion.getQuestion()).toString());
-            txtOp1.setText(currentQuestion.getOption1());
-            txtOp2.setText(currentQuestion.getOption2());
-            txtOp3.setText(currentQuestion.getOption3());
-            txtOp4.setText(currentQuestion.getOption4());
+            txtOp1.setText(Html.fromHtml(currentQuestion.getOption1()).toString());
+            txtOp2.setText(Html.fromHtml(currentQuestion.getOption2()).toString());
+            txtOp3.setText(Html.fromHtml(currentQuestion.getOption3()).toString());
+            txtOp4.setText(Html.fromHtml(currentQuestion.getOption4()).toString());
             questionCounter++;
             timeLeftInMillis = COUNTDOWN_IN_MILLIS;
             startCountDown();

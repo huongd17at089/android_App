@@ -127,7 +127,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
                             android:layout_weight="1"
-                            android:text="TextView"
+                            android:text="Từ thành thạo"
                             android:textSize="10dp"
                             android:textStyle="italic" />
                     </LinearLayout>
@@ -168,7 +168,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
                             android:layout_weight="1"
-                            android:text="TextView"
+                            android:text="Chủ điểm"
                             android:textSize="10dp"
                             android:textStyle="italic" />
                     </LinearLayout>
